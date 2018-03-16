@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
-import '../styles/mainComponent.css';
+import '../styles/content/mainComponent.css';
+import ContactInfoComponent from './ContactInfoComponent';
+import ToolbarComponent from './ToolbarComponent';
+import UsersTableComponent from './UsersTableComponent';
 
 class MainComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {clicked: ' '};
+  }
+
+componentWillMount(){
+  const API = './contacts.json';
+  fetch(API)
+      .then(response => response.json())
+      .then(data => this.setState({ contacts: data }));
+}
+
+
   render() {
     return (
       <div className="mainComponent">
-            <h1>This is main</h1>
-            <p>will hold state for jsx call, pass props to table for displaying, also will update contact info based on number pressed</p>
+            <ToolbarComponent />
+            <div className="contactPanel">
+              <ContactInfoComponent />
+              <UsersTableComponent contacts={this.state.contacts} />
+            </div>
       </div>
     );
   }

@@ -5,7 +5,7 @@ const LogoComponent = (props) => {
 
     return (
         <div className="logoComponent">
-            <h1>CONTACTIFY!!!!</h1>
+            <h1>CONTACTIFY</h1>
          </div>
     )};
 

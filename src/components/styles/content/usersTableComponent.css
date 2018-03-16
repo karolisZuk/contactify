@@ -1,0 +1,55 @@
+.usersTableComponent {
+    height:400px;
+}
+
+#contactsTable{
+    border-collapse: collapse;
+    margin-left:50px;
+    font-size: 0.96 em;
+}
+
+#contactsTable tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+#contactsTable tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+#contactsTable tr:first-child th:first-child,
+ table.Info tr:first-child td:first-child {
+     border-top-left-radius: 10px;
+ }
+ 
+ #contactsTable tr:first-child th:last-child,
+ table.Info tr:first-child td:last-child {
+     border-top-right-radius: 10px;
+ }
+
+
+#contactsTable th{
+    background: linear-gradient(to right, #0aa3c1, #0e9fb7);
+    text-align: left;
+    padding: 10px 57px 10px 20px;
+    color:white;
+    text-transform: capitalize;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:600;
+
+}
+
+#contactsTable td {
+    cursor: pointer;
+    border-top: 1px solid #ddd;
+    padding: 8px 57px 8px 20px;
+    background-color: #ffffff;
+}
+
+#contactsTable tr:hover td {
+    background-color:rgb(225,244, 248);
+    }
+
+#contactsTable i {margin-right: 8px;}
+
+
+/*rgb(15,115,147), rgb(29,178,214)*/

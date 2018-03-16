@@ -1,0 +1,70 @@
+.userSettingsComponent {
+    color:white;
+    background:#0aa3c1;
+    padding:0 5px 0 5px;
+    margin: 0 40px 0 0;
+    border-radius:0 0 15px 15px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.userSettingsComponent > p, i {
+    margin:10px 3px 0 3px;
+    display: inline;
+}
+
+#userSettingsPopup {
+    margin-right:40px;
+    margin-top:20px;
+    background-color:#0aa3c1;
+    width: 200px;
+    height: 133px;
+    z-index: 999;
+    position: absolute;
+    right: 0;
+    border-radius: 10px 0 10px 10px;
+    border:2px solid #0086a5;
+}
+
+#userSettingsPopup > ul {
+    padding: 0;
+    margin-top:-2px; 
+}
+
+li+li { border-top: 1px solid #0086a5 }
+
+
+#userSettingsPopup li{
+    list-style-type: none;
+    color:white;
+    font-size:1em;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+#userSettingsPopup li:hover{
+    background-color:#0086a5;
+    list-style-type: none;
+    color:white;
+    border-radius: 0;
+}
+
+#userSettingsPopup li:first-child:hover {
+    border-radius: 10px 0 0 0;
+}
+
+#userSettingsPopup  li:last-child:hover{
+    border-radius:0 0 10px 10px;
+}
+
+  /* creates triangle */
+  #userSettingsPopup:after{
+    content: "";
+    position: absolute;
+    top:-15px;
+    left: 150px;
+    width: 0;
+    border-width: 0 15px 15px;
+    border-style: solid;
+    border-color: #0aa3c1 transparent;
+  }

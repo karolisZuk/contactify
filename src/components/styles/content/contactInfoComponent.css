@@ -1,0 +1,22 @@
+.contactInfoComponent {
+    background-color:white;
+    height: 400px;
+    width: 240px;
+    float: left;
+    border-radius: 10px;
+}
+
+#userImage {
+    width: 180;
+    height: 180px;
+    margin: 20px 30px 30px 30px;
+    background-color: darkgrey;
+    border-radius: 50%;
+}
+
+#contactText {
+    color:#848484;
+    font-size:1em;
+    line-height: 90%;
+    margin-left:10px; 
+}

@@ -1,0 +1,10 @@
+.mainComponent {
+    height: 100%;
+    z-index: -1;
+}
+
+.contactPanel {
+    margin:30px 40px 30px 40px;
+    display: flex;
+    flex: 0 0 auto ;
+}

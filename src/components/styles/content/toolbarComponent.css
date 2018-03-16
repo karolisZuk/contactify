@@ -1,0 +1,14 @@
+.toolbarComponent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:left;
+    background:rgba(0,0,0,0.3);
+    padding:10px 0 0 0;
+}
+
+input {
+    padding:10px 50px 10px 50px;
+    margin-right: 20px;
+    margin-left: 40px;
+}
