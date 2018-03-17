@@ -31,12 +31,13 @@ class UserSettingsComponent extends Component {
       <i className="fa fa-user"></i><p>Jorah Mormont</p><i className="fa fa-caret-down"></i>
       </div>
       {this.state.expanded?
-      <div id='userSettingsPopup'><ul>
-      {this.mapObject(userMenuItems, function (key, value) {
-        return <li key={value} ><i className= {value}></i>{key}</li>
-      })}
-      </ul>
-      </div>: <div></div>}
+        <div id='userSettingsPopup'>
+          <ul>
+            {this.mapObject(userMenuItems, function (key, value) {
+              return <li key={value} ><i className= {value}></i>{key}</li>
+            })}
+          </ul>
+        </div>: <div></div>}
 
       </div>
     );

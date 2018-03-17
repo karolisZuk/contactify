@@ -19,4 +19,12 @@
     font-size:1em;
     line-height: 90%;
     margin-left:10px; 
+    text-align: right;
+}
+
+#contactValues {
+    font-size:1em;
+    line-height: 90%;
+    margin-left:10px; 
+    text-align: left;
 }

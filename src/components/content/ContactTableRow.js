@@ -5,8 +5,8 @@ const ContactTableRow = (props) => {
 
     return (
       
-      <tr>
-          <td>{props.active?<i class="fa fa-eye"></i>:<i class="fa fa-eye-slash"></i>}{props.name}</td>
+      <tr onClick={() => {props.inspectContact(props)}}>
+          <td>{props.active?<i className="fa fa-eye"></i>:<i className="fa fa-eye-slash"></i>}{props.name}</td>
           <td>{props.surname}</td>
           <td>{props.city}</td>
           <td>{props.email}</td>
