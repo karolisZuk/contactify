@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/footerComponent.css';
 
 const ContactTableRow = (props) => {
 
