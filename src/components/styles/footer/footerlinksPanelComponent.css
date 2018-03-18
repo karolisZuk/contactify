@@ -1,0 +1,11 @@
+.footerLinksPanelComponent a{
+    color:white;
+    display: block;
+    line-height:180%;
+}
+
+.footerLinksPanelComponent{
+    flex: 1;
+    margin:20px 110px 0px 20px;
+    min-width: 230px;
+}

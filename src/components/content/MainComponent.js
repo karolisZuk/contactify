@@ -65,7 +65,7 @@ sortByName(contacts){
                 contacts={this.state.contacts} 
                 inspectContact={this.selectContact.bind(this)} 
                 sortByName={this.sortByName.bind(this)}
-                sorted={this.state.sorted}/>
+                sorted={this.state.sorted} />
             </div>
       </div>
     );

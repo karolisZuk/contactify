@@ -1,0 +1,18 @@
+.footerHelpDesk {
+    background:rgba(0,0,0,0.3);
+    display: flex;
+}
+
+.footerHelpDesk .block{
+    display:block;
+    margin-top:10px;
+}
+
+.footerHelpDesk .fa-stethoscope {
+    font-size: 3em;
+    margin:20px 20px 11px 20px;
+}
+
+.footerHelpDesk p {
+    line-height: 40%;
+}

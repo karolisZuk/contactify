@@ -1,0 +1,31 @@
+.footerLastSyncComponent .block{
+    display:block;
+    margin-top:10px;
+}
+
+.footerLastSyncComponent{
+    display:flex;
+    background:rgba(0,0,0,0.3);
+    margin-bottom: 2px;
+}
+
+.footerLastSyncComponent .fa-cloud-download {
+    font-size: 3em;
+    margin:20px 20px 20px 20px;
+}
+
+.footerLastSyncComponent p {
+    line-height: 40%;
+}
+
+.footerLastSyncComponent a {
+    color:white;
+}
+
+.footerLastSyncComponent .force {
+    margin-top:20px;
+    position: relative;
+    left:150px;
+}
+
+

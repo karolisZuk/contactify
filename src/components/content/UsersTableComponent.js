@@ -37,6 +37,8 @@ class UsersTableComponent extends Component {
         headers.forEach(header => {
           if(header==='name'){
                 tableHeaders.push(<th key={header} id="nameHeader">{header}{this.renderPointer()}</th>)
+          }else if(header==='active'){
+              tableHeaders.push(<th key='widgets' id="widgetsHeader"> </th>)
           }else tableHeaders.push(<th key={header}>{header}</th>)
         });
 

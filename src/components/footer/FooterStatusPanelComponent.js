@@ -9,7 +9,7 @@ const FooterStatusPanel = (props) => {
         <div className="footerStatusPanelComponent">
             <FooterLastSyncComponent />
             <FooterHelpDeskComponent />
-         </div>
+        </div>
     )};
 
     export default FooterStatusPanel;

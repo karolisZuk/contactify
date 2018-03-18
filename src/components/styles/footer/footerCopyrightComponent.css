@@ -1,4 +1,16 @@
-.footerCopyrightComponent a{
-    color:white;
+.footerCopyrightComponent #primaryLinks a{
     display: block;
+}
+.footerCopyrightComponent {
+    flex: 3; 
+    padding-left:40px;
+    padding-top:20px;
+    line-height: 180%;
+}
+
+.footerCopyrightComponent a {color:white;}
+
+.footerCopyrightComponent #copy {
+    position: absolute;
+    bottom:10px;    
 }

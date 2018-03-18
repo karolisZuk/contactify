@@ -11,11 +11,18 @@ const FooterComponent = (props) => {
         'Notifications':'/notifications'
         }
 
+    let otherLinks={
+        'Groups':'/groups',
+        'Frequently contacted':'/frequently_contacted',
+        'Preferences':'/preferences',
+        'Log out':'/logout'
+        }
+
     return (
         <div className="footerComponent">
             <FooterCopyrightComponent links={copyrightLinks} />
             <FooterStatusPanelComponent />
-            <FooterLinksPanelComponent />
+            <FooterLinksPanelComponent links={otherLinks} />
          </div>
     )};
 

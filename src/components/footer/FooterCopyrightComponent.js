@@ -5,9 +5,12 @@ const FooterCopyrightComponent = (props) => {
     
     return (
         <div className="footerCopyrightComponent">
-        {Object.keys(props.links).map(function(key) {
-            return <a href={props.links[key]}>{key}</a>;
-        })}
+            <div id='primaryLinks'>
+                {Object.keys(props.links).map(function(key) {
+                    return <a href={props.links[key]} key={key}>{key}</a>;
+                })}
+            </div>
+        <p id='copy'>	&copy; 2015 Contactify <a href='/about'>About</a> <a href='/privacy'>Privacy</a></p>
           </div>
     )};
 
