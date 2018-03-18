@@ -47,4 +47,4 @@
 
 #contactsTable i {margin-right: 8px;}
 #contactsTable #nameHeader {padding-left: 20px;}
-.fa-arrow-down {margin-left: 30px; cursor: pointer;}
+.fa-arrow-down, .fa-arrow-up {margin-left: 30px; cursor: pointer;}

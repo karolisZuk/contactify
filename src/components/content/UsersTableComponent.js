@@ -6,39 +6,27 @@ class UsersTableComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      contacts: [],
-      sorted:false
-  };
+      contacts: []
+    }
   }
 
   componentWillReceiveProps(props){
     this.setState({contacts:props.contacts});
+    this.setState({sorted:props.sorted});
   }
 
-  sortByName(contacts){
-      if(this.state.sorted) {
-            //reverse Array.
-        this.setState({
-          contacts:contacts});
-      }
-      contacts.sort(((a,b) => {
-        if(a.name < b.name) 
-          return -1
-        if(a.name > b.name)
-          return 1;
-        else 
-          return 0;
-      }));
-    this.setState({
-      contacts:contacts,
-      sorted:true});
+  renderPointer(){
+    if(this.state.sorted){
+      return (<i className="fa fa-arrow-down" onClick={()=>this.props.sortByName(this.state.contacts)}></i>)
+    }else {
+      return (<i className="fa fa-arrow-up" onClick={()=>this.props.sortByName(this.state.contacts)}></i>)
+    }
   }
 
   render() {
 
     let tableHeaders=[];
     let tableRows = [];
-    let tableData=this.state.contacts;
 
     let headers = Object.keys(this.props.contacts[0]);
     var index = headers.indexOf('id');
@@ -48,11 +36,11 @@ class UsersTableComponent extends Component {
 
         headers.forEach(header => {
           if(header==='name'){
-                tableHeaders.push(<th key={header} id="nameHeader">{header}<i className="fa fa-arrow-down" onClick={()=>this.sortByName(this.state.contacts)}></i></th>)
+                tableHeaders.push(<th key={header} id="nameHeader">{header}{this.renderPointer()}</th>)
           }else tableHeaders.push(<th key={header}>{header}</th>)
         });
 
-        tableData.forEach(contact => tableRows.push(
+        this.state.contacts.forEach(contact => tableRows.push(
           <ContactTableRow 
           key={contact.id}
           active={contact.active}
