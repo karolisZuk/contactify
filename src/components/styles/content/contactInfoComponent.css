@@ -16,15 +16,15 @@
 
 #contactText {
     color:#848484;
-    font-size:1em;
+    font-size:0.85em;
     line-height: 90%;
-    margin-left:10px; 
+    margin-left:8px; 
     text-align: right;
 }
 
 #contactValues {
-    font-size:1em;
+    font-size:0.85em;
     line-height: 90%;
-    margin-left:10px; 
+    margin-left:5px; 
     text-align: left;
 }

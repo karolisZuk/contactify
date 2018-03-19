@@ -11,8 +11,11 @@ class UsersTableComponent extends Component {
   }
 
   componentWillReceiveProps(props){
-    this.setState({contacts:props.contacts});
-    this.setState({sorted:props.sorted});
+    this.setState({
+      contacts:props.contacts,
+      headers:props.headers,
+      sorted:props.sorted
+    });
   }
 
   renderPointer(){
@@ -23,17 +26,28 @@ class UsersTableComponent extends Component {
     }
   }
 
-  render() {
-
-    let tableHeaders=[];
+  renderTableRow(){
+    if(this.state.contacts){
     let tableRows = [];
+      this.state.contacts.forEach(contact => tableRows.push(
+        <ContactTableRow 
+        key={contact.id}
+        active={contact.active}
+        name={contact.name}
+        surname={contact.surname} 
+        city={contact.city}
+        email={contact.email}
+        phone={contact.phone}
+        inspectContact={this.props.inspectContact}
+        />));
+      return tableRows;
+    }
+  }
 
-    let headers = Object.keys(this.props.contacts[0]);
-    var index = headers.indexOf('id');
-    if (index !== -1) {
-       headers.splice(index, 1);
-    }  
-
+  renderTableHeader(){
+    if(this.state.headers){
+      let tableHeaders=[];
+      let headers = this.state.headers;
         headers.forEach(header => {
           if(header==='name'){
                 tableHeaders.push(<th key={header} id="nameHeader">{header}{this.renderPointer()}</th>)
@@ -41,24 +55,17 @@ class UsersTableComponent extends Component {
               tableHeaders.push(<th key='widgets' id="widgetsHeader"> </th>)
           }else tableHeaders.push(<th key={header}>{header}</th>)
         });
+      return (<thead><tr>{tableHeaders}</tr></thead>);
+    }
+  }
 
-        this.state.contacts.forEach(contact => tableRows.push(
-          <ContactTableRow 
-          key={contact.id}
-          active={contact.active}
-          name={contact.name}
-          surname={contact.surname} 
-          city={contact.city}
-          email={contact.email}
-          phone={contact.phone}
-          inspectContact={this.props.inspectContact}
-          />));
+  render() {
 
     return (
       <div>
           <table id="contactsTable">
-              <thead><tr>{tableHeaders}</tr></thead>
-              <tbody> {tableRows} </tbody>
+              {this.renderTableHeader()}
+              <tbody> {this.renderTableRow()} </tbody>
           </table>
         </div>
     );

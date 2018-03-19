@@ -19,7 +19,7 @@ let dateString= yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + min + ':' + ss;
 
     return (
         <div className="footerLastSyncComponent">
-            <i class="fa fa-cloud-download"></i>
+            <i className="fa fa-cloud-download"></i>
             <span className='block'>
                 <p>Last synced:</p>
                 <p>{dateString}</p>

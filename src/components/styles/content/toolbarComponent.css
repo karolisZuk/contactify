@@ -4,11 +4,74 @@
     align-items: flex-start;
     justify-content:left;
     background:rgba(0,0,0,0.3);
-    padding:10px 0 0 0;
+    padding:10px 0 10px 0;
 }
 
-input {
+.inputField {
     padding:10px 50px 10px 50px;
     margin-right: 20px;
     margin-left: 40px;
+    border-radius:20px;
+    border:2px solid black;
+    position: relative;
+}
+
+::-webkit-input-placeholder { 
+    color: darkslategrey;
+  }
+
+input {
+    font-size: 1em;
+}
+
+#checkbox {
+    margin: 13px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 2px solid black;
+}
+
+.toolbarComponent p{
+    color:white;
+    margin:9px;
+}
+
+.toolbarComponent select {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    font-size:1em; 
+    padding:10px 50px 10px 50px;
+    margin-right: 20px;
+    margin-left: 40px;
+    border-radius:20px;
+    min-width: 193px;
+    border:2px solid black;
+    position: relative;
+ }
+
+ label.wrap:after {
+    content:"\f0d7 ";
+    font-family: FontAwesome;
+    color: #000;
+    position: absolute; 
+    right: 0; 
+    top: 14px;
+    z-index: 1;
+    width: 10%;
+    height: 100%;  
+    pointer-events: none;    
+}
+
+label.wrap {
+    width:235px;
+    overflow: hidden; 
+    height: 45px;    
+    position: relative;
+    display: block;
 }

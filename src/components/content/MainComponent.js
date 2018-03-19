@@ -16,7 +16,15 @@ componentWillMount(){
   const API = './contacts.json';
   fetch(API)
       .then(response => response.json())
-      .then(data => this.setState({ contacts: data }));
+      .then(data => {
+        this.setState({
+          active:true, 
+          contacts: data, 
+          cities:this.getCities(data),
+          headers:this.getHeaders(data),
+          fullContactList:data})
+      });
+
 }
 
 selectContact(contact){
@@ -54,15 +62,73 @@ sortByName(contacts){
   this.setState({contacts:contacts});
 }
 
+sortByCity(selectedCity){
+  if(selectedCity==='All'){
+    this.setState({contacts:this.state.fullContactList});
+  }else{
+  let filteredByCitiesList=[];
+  this.state.fullContactList.map(contact=>{
+    if(contact.city===selectedCity){
+      filteredByCitiesList.push(contact);
+    }
+  });
+  this.setState({contacts:filteredByCitiesList});
+  }
+}
+
+sortActive(){
+  this.setState({contactsBeforeActive:this.state.contacts});
+    if(this.state.active){
+      this.setState({contacts:this.getActiveUsers()});
+    }else{
+      this.setState({contacts:this.state.contactsBeforeActive});
+    }
+    this.setState({active:!this.state.active});
+}
+
+getActiveUsers(){
+  let activeUsers=[];
+  this.state.contacts.map(user=>{
+    if(user.active){
+      activeUsers.push(user);
+    }
+  });
+    return activeUsers;
+}
+
+getCities(dataArray){
+    let cities=[];
+    for(let i=0; i<dataArray.length; i++){
+      cities.push(dataArray[i].city);
+    }
+    cities = cities.filter(function(item, pos) {
+      return cities.indexOf(item) === pos;
+  })
+    return cities;
+}
+
+getHeaders(data){
+  let headers = Object.keys(data[0]);
+  var index = headers.indexOf('id');
+    if (index !== -1) {
+       headers.splice(index, 1);
+    }  
+  return headers;
+}
+
   render() {
-    let sel={};
+    
     return (
       <div className="mainComponent">
-            <ToolbarComponent />
+            <ToolbarComponent 
+              cities={this.state.cities?this.state.cities:[]} 
+              sortByCity={this.sortByCity.bind(this)} 
+              sortActive={this.sortActive.bind(this)} />
             <div className="contactPanel">
               <ContactInfoComponent selectedContact={this.state.selectContact} />
               <UsersTableComponent 
-                contacts={this.state.contacts} 
+                headers={this.state.headers?this.state.headers:[]}
+                contacts={this.state.contacts?this.state.contacts:[]} 
                 inspectContact={this.selectContact.bind(this)} 
                 sortByName={this.sortByName.bind(this)}
                 sorted={this.state.sorted} />
