@@ -3,6 +3,7 @@ import '../styles/header/headerComponent.css';
 import Meniu from './MeniuComponent';
 import Logo from './LogoComponent';
 import UserSettingsComponent from './UserSettingsComponent';
+import SearchComponent from './SearchComponent';
 
 class HeaderComponent extends Component {
   render() {
@@ -10,6 +11,7 @@ class HeaderComponent extends Component {
       <div className="headerComponent">
             <Logo />
             <Meniu />
+            <SearchComponent />
             <UserSettingsComponent />
       </div>
     );

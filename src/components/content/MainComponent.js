@@ -22,7 +22,8 @@ componentWillMount(){
           contacts: data, 
           cities:this.getCities(data),
           headers:this.getHeaders(data),
-          fullContactList:data})
+          fullContactList:data,
+          nameString:''})
       });
 
 }
@@ -51,7 +52,7 @@ sortAlphabeticaly(contacts){
   return contacts;
 }
 
-sortByName(contacts){
+sortByAlphabet(contacts){
     if(this.state.sorted) {
       contacts=this.reverseList(contacts);
       this.setState({sorted:false});
@@ -116,21 +117,42 @@ getHeaders(data){
   return headers;
 }
 
+sortByName(event){
+  if(event){
+  let prevData=this.state.contacts;
+  this.setState({nameString:event});
+  let queryResult=[];
+  let queryDataSet=this.state.contacts;
+
+  queryDataSet.forEach((contact)=>{
+    if(contact.name.toLowerCase().indexOf(this.state.nameString)!=-1)
+    queryResult.push(contact);
+});
+  this.setState({contacts:queryResult});
+  }else{
+    this.setState({nameString:''});
+    this.setState({contacts:this.state.fullContactList});
+  }
+
+}
+
+
   render() {
-    
     return (
       <div className="mainComponent">
             <ToolbarComponent 
               cities={this.state.cities?this.state.cities:[]} 
+              nameValue={this.state.nameString}
               sortByCity={this.sortByCity.bind(this)} 
-              sortActive={this.sortActive.bind(this)} />
+              sortActive={this.sortActive.bind(this)} 
+              sortByName={this.sortByName.bind(this)} />
             <div className="contactPanel">
               <ContactInfoComponent selectedContact={this.state.selectContact} />
               <UsersTableComponent 
                 headers={this.state.headers?this.state.headers:[]}
                 contacts={this.state.contacts?this.state.contacts:[]} 
                 inspectContact={this.selectContact.bind(this)} 
-                sortByName={this.sortByName.bind(this)}
+                sortByAlphabet={this.sortByAlphabet.bind(this)}
                 sorted={this.state.sorted} />
             </div>
       </div>

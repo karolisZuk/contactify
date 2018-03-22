@@ -1,0 +1,28 @@
+.searchComponent input{
+    padding:10px 50px 10px 50px;
+    border-radius:20px;
+    border:2px solid black;
+    position: relative;
+}
+
+.searchComponent{
+    margin:20px 0 0 0;
+}
+
+.searchIcon {
+    position: absolute;
+    color:grey;
+    top: 2px;
+    left:234px; 
+    z-index: 2;
+    background-color: lightgrey;
+    padding: 11px 10px 11px 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.searchComponent .wrapper { 
+    position: relative;
+    border:1px solid grey;
+    border-radius: 20px;
+}

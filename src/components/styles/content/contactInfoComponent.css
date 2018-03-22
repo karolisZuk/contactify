@@ -10,8 +10,11 @@
     width: 180;
     height: 180px;
     margin: 20px 30px 30px 30px;
-    background-color: darkgrey;
+    background-image: url(/userpic.jpg);
+    background-repeat: no-repeat;
+    background-size: 110%;
     border-radius: 50%;
+    border:5px solid lightgrey;
 }
 
 #contactText {

@@ -20,9 +20,9 @@ class UsersTableComponent extends Component {
 
   renderPointer(){
     if(this.state.sorted){
-      return (<i className="fa fa-arrow-down" onClick={()=>this.props.sortByName(this.state.contacts)}></i>)
+      return (<i className="fa fa-arrow-down" onClick={()=>this.props.sortByAlphabet(this.state.contacts)}></i>)
     }else {
-      return (<i className="fa fa-arrow-up" onClick={()=>this.props.sortByName(this.state.contacts)}></i>)
+      return (<i className="fa fa-arrow-up" onClick={()=>this.props.sortByAlphabet(this.state.contacts)}></i>)
     }
   }
 
